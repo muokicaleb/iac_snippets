@@ -1,14 +1,10 @@
-provider "aws" {
-  region = "us-west-2"
-}
-
 module "vpc" {
   source = "./modules"
 
-  vpc_cidr_block            = "10.0.0.0/16"
-  public_subnet_cidr_block  = "10.0.1.0/24"
-  private_subnet_cidr_block = "10.0.2.0/24"
-  availability_zone         = "us-west-2a"
+  vpc_cidr_block            = var.vpc_cidr_block
+  public_subnet_cidr_block  = var.public_subnet_cidr_block
+  private_subnet_cidr_block = var.private_subnet_cidr_block
+  availability_zone         = var.availability_zone
 }
 
 output "vpc_id" {
