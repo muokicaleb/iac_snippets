@@ -5,6 +5,7 @@ module "vpc" {
   public_subnet_cidr_block  = var.public_subnet_cidr_block
   private_subnet_cidr_block = var.private_subnet_cidr_block
   availability_zone         = var.availability_zone
+  vpc_name                  = var.vpc_name
 }
 
 output "vpc_id" {
